@@ -1,0 +1,41 @@
+<!--
+  Generated template for the EditDataPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Minhas Despesa/Renda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Editar</h2>
+  <form (ngSubmit)="updateData()">
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo</ion-label>
+      <ion-select [(ngModel)]="data.type" name="type" required="">
+        <ion-option value="Renda">Renda</ion-option>
+        <ion-option value="despesa">Despesa</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descrição</ion-label>
+      <ion-input type="text" placeholder="Descrição" [(ngModel)]="data.description" name="description" required="" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Valor</ion-label>
+      <ion-input type="number" placeholder="Valor" [(ngModel)]="data.amount" name="amount" required="" ></ion-input>
+    </ion-item>
+    <ion-input type="hidden" [(ngModel)]="data.rowid" name="rowid"></ion-input>
+    <button ion-button type="submit" block>Atualizar</button>
+  </form>
+</ion-content>
